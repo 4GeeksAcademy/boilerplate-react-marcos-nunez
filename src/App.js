@@ -1,9 +1,16 @@
-import "./App.css";
-import HomePage from "./pages/HomePage";
+import { Route, Routes } from "react-router";
+import routeConfig from "./components/RouteConfig";
 
 const App = () => {
-  <> </>;
-  return <HomePage />;
+  return (
+    <>
+      <Routes>
+        {routeConfig.map((ruta) => {
+          return <Route path={ruta.path} element={ruta.component} />;
+        })}
+      </Routes>
+    </>
+  );
 };
 
 export default App;
